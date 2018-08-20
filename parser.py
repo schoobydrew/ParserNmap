@@ -13,6 +13,7 @@ def information():
 	exit()
 def searcher(a, file):
 	spreadsheet = open('{}.csv'.format(file), 'a+')
+	print >> spreadsheet, "IP,PORT,PROTOCOL,VERSION"
 	ip_addr = a[a.find(":")+2:a.find("(")-1]
 	info = re.findall("(?<=Ports: )(.*?)(?=Ignored)", a)
 	if len(info) == 0:
