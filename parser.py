@@ -1,5 +1,5 @@
-#edit by Andrew Schoonmaker
-#credit to Alton Johnson for the searching function that is used in this
+#made by Andrew Schoonmaker
+#credit to Alton Johnson for the parsing function that is used in this script
 #parses grepable nmap output and puts into spreadsheet
 #or you know just output nmap as an xml
 #!/usr/bin/python
