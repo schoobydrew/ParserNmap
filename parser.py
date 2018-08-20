@@ -39,7 +39,7 @@ def start(argv):
 	if len(argv) == 0:
 		information()
 	contents = sorted(open(argv[0]).read().split('\n'))
-	spreadsheet = open('{}.csv'.format(file), 'a+')
+	spreadsheet = open('{}.csv'.format(argv[0]), 'a+')
 	print >> spreadsheet, "IP,PORT,PROTOCOL,VERSION"
 	spreadsheet.close()
 	for item in contents:
