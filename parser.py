@@ -13,7 +13,6 @@ def information():
 	exit()
 def searcher(a, file):
 	spreadsheet = open('{}.csv'.format(file), 'a+')
-	print >> spreadsheet, "IP,PORT,PROTOCOL,VERSION"
 	ip_addr = a[a.find(":")+2:a.find("(")-1]
 	info = re.findall("(?<=Ports: )(.*?)(?=Ignored)", a)
 	if len(info) == 0:
@@ -40,6 +39,10 @@ def start(argv):
 	if len(argv) == 0:
 		information()
 	contents = sorted(open(argv[0]).read().split('\n'))
+	spreadsheet = open('{}.csv'.format(file), 'a+')
+	print >> spreadsheet, "IP,PORT,PROTOCOL,VERSION"
+	spreadsheet.close()
 	for item in contents:
 		searcher(item, argv[0])
+	
 start(argv[1:])
